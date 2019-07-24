@@ -1,5 +1,6 @@
 import axios from 'axios'
 import environment from 'environment'
+import checkResponse from './checkResponse'
 
 /**
  *
@@ -13,7 +14,6 @@ export default function request(url, option = {}) {
   // 处理headers
   option.headers = Object.assign(
     {
-      'cache-control': 'no-cache',
       'Content-Type': 'application/json',
       'X-Requested-With': 'XMLHttpRequest'
     },
@@ -22,11 +22,12 @@ export default function request(url, option = {}) {
   // 设置baseUrl
   option.baseURL = environment.baseUrl
   // 请求超时时间
-  option.timeout = 10000
+  option.timeout = 15000
 
   return new Promise((resolve, reject) => {
     axios
       .request({ ...option, url })
+      .then(checkResponse)
       .then(res => {
         resolve(res)
       })
