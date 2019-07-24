@@ -19,7 +19,8 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
-      legacyDecorators: true
+      legacyDecorators: true,
+      experimentalObjectRestSpread: true
     },
     ecmaVersion: 2018,
     sourceType: 'module'

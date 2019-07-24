@@ -1,0 +1,5 @@
+node_modules
+config/config.js
+src/utils/socket.js
+local/*.js
+public/*.js

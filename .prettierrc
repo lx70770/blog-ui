@@ -3,11 +3,5 @@
   "singleQuote": true,
   "trailingComma": "none",
   "printWidth": 100,
-  "jsxBracketSameLine": true,
-  "overrides": [
-    {
-      "files": ".prettierrc",
-      "options": { "parser": "json" }
-    }
-  ]
+  "jsxBracketSameLine": true
 }
