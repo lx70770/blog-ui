@@ -12,7 +12,10 @@
 
 # misc
 .DS_Store
+.idea
+.history
 
 # umi
 .umi
 .umi-production
+.workspace
