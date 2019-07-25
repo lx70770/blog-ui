@@ -12,6 +12,11 @@ export default {
       target: `http://${url}:8080/api`,
       changeOrigin: true,
       pathRewrite: { '^/api': '' }
+    },
+    '/dsapi': {
+      target: 'http://open.iciba.com/dsapi',
+      changeOrigin: true,
+      pathRewrite: { '^/dsapi': '' }
     }
   },
   //动态加载antd-pro

@@ -3,7 +3,6 @@ import environment from 'environment'
 import checkResponse from './checkResponse'
 
 /**
- *
  * @param {*string} url
  * @param {*object} option
  */
