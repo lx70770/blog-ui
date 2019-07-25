@@ -49,7 +49,7 @@ class Home extends PureComponent {
           {tts ? <Icon component={Suona} onClick={this.playAudio} /> : null}
         </div>
         <div className={style.ch}>{note}</div>
-        <div className={style.from}>————金山词霸</div>
+        <div className={style.from}>———— &nbsp;&nbsp;金山词霸</div>
         <img className={style.img} src={picture2} alt="" />
       </div>
     )

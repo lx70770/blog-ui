@@ -61,6 +61,7 @@ export default {
   alias: {
     assets: path.resolve(__dirname, '../src/assets'),
     environment: `environment/${process.env.NODE_ENV}`,
-    utils: path.resolve(__dirname, '../src/utils')
+    utils: path.resolve(__dirname, '../src/utils'),
+    components: path.resolve(__dirname, '../src/components')
   }
 }

@@ -2,10 +2,11 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  // height: 100%;
+  height: 100%;
   overflow: auto;
 
   .mainHeader {
+    flex-shrink: 0;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -39,12 +40,56 @@
         &:hover {
           opacity: 1;
         }
+        a {
+          color: #131313;
+        }
+      }
+      .activeLi {
+        opacity: 1;
+      }
+      .weichat {
+        position: relative;
+        img {
+          display: none;
+          position: absolute;
+          width: 120px;
+          left: 50%;
+          transform: translateX(-50%);
+          border: 1px solid #131313;
+          border-radius: 5px;
+          padding: 8px;
+        }
+        &:hover img {
+          top: 30px;
+          display: block;
+          transform-origin: 100% 0%;
+          animation: fadeIn 0.3s linear;
+        }
+
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 100%;
+          }
+        }
       }
     }
   }
 
   .container {
-    // flex: 1;
-    margin: 20px 35px 0 35px;
+    margin: 20px 35px 35px 35px;
+  }
+  .footer {
+    margin-bottom: 15px;
+    text-align: center;
+    .divider {
+      margin: 0 auto 15px auto;
+      height: 1px;
+      width: 70%;
+      opacity: 0.4;
+      background-color: #131313;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import publicRoutes from './public'
-import HomeRoutes from './home'
+import MainRoutes from './main'
 
 export default [
   {
@@ -10,6 +10,6 @@ export default [
   {
     path: '/main',
     component: '../layouts/MainLayout',
-    routes: HomeRoutes
+    routes: MainRoutes
   }
 ]
