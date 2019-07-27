@@ -4,11 +4,11 @@ export default [
     route: '/main/home'
   },
   {
-    name: 'About',
-    route: '/main/about'
-  },
-  {
     name: 'Element',
     route: '/main/element'
+  },
+  {
+    name: 'About',
+    route: '/main/about'
   }
 ]

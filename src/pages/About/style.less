@@ -4,16 +4,20 @@
 }
 
 .about {
-  .tagLine {
-    font-family: 'KeeponTruckin';
-    color: #444;
-    font-size: 3rem;
-    line-height: 1;
-    text-align: left;
-    font-weight: 700;
-    padding-top: 25px;
-    margin-left: 10px;
+  .selfComments {
+    height: 150px;
+    .tagLine {
+      font-family: 'KeeponTruckin';
+      color: rgb(180, 174, 174);
+      font-size: 1.5rem;
+      line-height: 1;
+      text-align: left;
+      font-weight: 700;
+      padding-top: 25px;
+      margin-left: 10px;
+    }
   }
+
   .aboutProgmme {
     display: flex;
     flex-flow: row nowrap;
@@ -25,11 +29,18 @@
     margin-top: 20px;
 
     .left {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: flex-start;
       margin-left: 20%;
+      height: 120px;
+      h4 {
+        margin-bottom: 15px;
+      }
       span {
         font-size: 0.8rem;
         color: #222222;
-        opacity: 0.5;
+        opacity: 0.5 !important;
       }
     }
 
@@ -53,14 +64,31 @@
     box-sizing: border-box;
     overflow: hidden;
     .left {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: flex-start;
       margin-left: 20%;
-      color: #ffffff;
-      opacity: 0.5;
+      height: 120px;
       h4 {
         color: #ffffff;
+        margin-bottom: 15px;
       }
       span {
         font-size: 0.8rem;
+        color: #ffffff;
+        opacity: 0.5;
+      }
+      .github {
+        span {
+          display: inline-block;
+          margin-right: 12px;
+          cursor: pointer;
+          opacity: 0.5;
+          transition: opacity 0.1s linear;
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
     }
 
