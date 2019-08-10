@@ -4,8 +4,8 @@ export default [
     route: '/main/home'
   },
   {
-    name: 'Element',
-    route: '/main/element'
+    name: 'Blog',
+    route: '/main/blog'
   },
   {
     name: 'About',
