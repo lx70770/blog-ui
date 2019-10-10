@@ -46,7 +46,7 @@ export default class extends PureComponent {
               <ul style={{ color: isAboutRouter ? '#ddd4d4' : '#131313' }}>{this.renderMenu()}</ul>
             </div>
             <div className={style.middle}>
-              <img src={require('assets/imgs/logo.png')} alt="" />
+              {/* <img src={require('assets/imgs/logo.png')} alt="" /> */}
             </div>
             <div className={style.right}>
               <ul style={{ color: isAboutRouter ? '#ddd4d4' : '#131313' }}>

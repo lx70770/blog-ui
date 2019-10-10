@@ -5,7 +5,7 @@ export default [
   },
   {
     name: 'Blog',
-    route: '/main/blog'
+    route: '/main/blog/list'
   },
   {
     name: 'About',

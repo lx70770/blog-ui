@@ -9,7 +9,7 @@ export default {
   hash: true,
   proxy: {
     '/api': {
-      target: `http://${url}:8080/api`,
+      target: `http://${url}:3000/api`,
       changeOrigin: true,
       pathRewrite: { '^/api': '' }
     },
