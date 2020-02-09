@@ -8,10 +8,6 @@ import style from './style.less'
 @connect()
 class Home extends PureComponent {
   state = { content: '', note: '', picture2: '', tts: '' }
-  constructor(props) {
-    super(props)
-    props.dispatch({ type: 'home/query' })
-  }
 
   componentDidMount() {
     Axios.get('/dsapi/')

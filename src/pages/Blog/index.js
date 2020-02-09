@@ -1,7 +1,13 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
+import Lists from './Lists'
+import style from './style.less'
 
-export default class extends PureComponent {
-  render() {
-    return <div>blog list+</div>
-  }
+const Blog = () => {
+  return (
+    <div className={style.wrap}>
+      <Lists />
+    </div>
+  )
 }
+
+export default Blog

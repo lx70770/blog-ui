@@ -40,39 +40,39 @@ export default class extends PureComponent {
     let isAboutRouter = location.pathname === '/main/about'
     return (
       <div className={style.main}>
-        <PerfectScrollbar>
-          <div className={style.mainHeader}>
-            <div className={style.left}>
-              <ul style={{ color: isAboutRouter ? '#ddd4d4' : '#131313' }}>{this.renderMenu()}</ul>
-            </div>
-            <div className={style.middle}>
-              {/* <img src={require('assets/imgs/logo.png')} alt="" /> */}
-            </div>
-            <div className={style.right}>
-              <ul style={{ color: isAboutRouter ? '#ddd4d4' : '#131313' }}>
-                <li className={style.weichat}>
-                  WeChat
-                  <img src={require('assets/imgs/weichatQrcode.png')} alt="" />
-                </li>
-                <li>
-                  <a
-                    style={{ color: isAboutRouter ? '#ddd4d4' : '#131313' }}
-                    href="mailto:lx70770@gmail.com">
-                    Gmail
-                  </a>
-                </li>
-              </ul>
-            </div>
+        <div className={style.mainHeader}>
+          <div className={style.left}>
+            <ul style={{ color: isAboutRouter ? '#ddd4d4' : '#131313' }}>{this.renderMenu()}</ul>
           </div>
-          <div className={style.container}>{children}</div>
-          <div className={style.footer} style={{ color: isAboutRouter ? '#ddd4d4' : '#131313' }}>
-            <div
-              className={style.divider}
-              style={{ backgroundColor: isAboutRouter ? '#ddd4d4' : '#131313' }}
-            />
-            © 2019 lx70770. All rights reserved.
+          <div className={style.middle}>
+            {/* <img src={require('assets/imgs/logo.png')} alt="" /> */}
           </div>
-        </PerfectScrollbar>
+          <div className={style.right}>
+            <ul style={{ color: isAboutRouter ? '#ddd4d4' : '#131313' }}>
+              <li className={style.weichat}>
+                WeChat
+                <img src={require('assets/imgs/weichatQrcode.png')} alt="" />
+              </li>
+              <li>
+                <a
+                  style={{ color: isAboutRouter ? '#ddd4d4' : '#131313' }}
+                  href="mailto:lx70770@gmail.com">
+                  Gmail
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={style.container}>
+          <PerfectScrollbar>{children}</PerfectScrollbar>
+        </div>
+        <div className={style.footer} style={{ color: isAboutRouter ? '#ddd4d4' : '#131313' }}>
+          <div
+            className={style.divider}
+            style={{ backgroundColor: isAboutRouter ? '#ddd4d4' : '#131313' }}
+          />
+          © 2019 lx70770. All rights reserved.
+        </div>
       </div>
     )
   }
