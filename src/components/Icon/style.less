@@ -1,0 +1,42 @@
+.rotateIcon {
+  transform: rotate(0deg);
+  animation: iconRotate 1.2s linear infinite;
+}
+
+@keyframes iconRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hoverableWrap {
+  position: relative;
+
+  .first {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 10;
+    transition: opacity 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .second {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}
+
+.hoverableWrap:hover .first {
+  opacity: 1;
+}
