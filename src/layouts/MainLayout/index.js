@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import router from 'umi/router'
-import PerfectScrollbar from 'react-perfect-scrollbar'
+// import PerfectScrollbar from 'react-perfect-scrollbar'
 import { Icon } from 'components'
 import Menu from './menu.comfig'
 import style from './style.less'
@@ -38,13 +38,8 @@ export default class extends PureComponent {
             </li>
           </ul>
         </div>
-        <div className={style.container}>
-          <div className={style.content}>
-            <PerfectScrollbar>{children}</PerfectScrollbar>
-          </div>
-          <div className={style.footer}>
-            <div className={style.divider} />© 2019 lx70770. All rights reserved.
-          </div>
+        <div className={style.container} id="container">
+          <div className={style.content}>{children}</div>
         </div>
       </div>
     )

@@ -1,6 +1,10 @@
 import React, { PureComponent } from 'react'
-import { List, Tag, Icon, Button } from 'antd'
+import { Icon } from 'components'
+import { Button, Avatar, Typography } from 'antd'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 import style from './style.less'
+
+const { Paragraph, Title } = Typography
 
 const listData = []
 for (let i = 0; i < 10; i++) {
@@ -11,54 +15,57 @@ for (let i = 0; i < 10; i++) {
   })
 }
 
-const IconText = ({ type, text }) => (
-  <span>
-    <Icon type={type} style={{ marginRight: 8 }} />
-    {text}
-  </span>
-)
-
 export default class Lists extends PureComponent {
+  componentDidMount() {
+    document.querySelector('#container').style.overflow = 'hidden'
+  }
+  componentWillUnmount() {
+    document.querySelector('#container').style.overflow = 'auto'
+  }
   render() {
     return (
-      <List
-        itemLayout="vertical"
-        size="small"
-        loadMore={
+      <div className={style.blogList}>
+        <div className={style.search}>
+          <input placeholder="Search with Enter" />
+          <Icon type="search" />
+        </div>
+        <div className={style.action}>
+          <Icon type="sort" widih={18} height={18} />
+        </div>
+        <PerfectScrollbar>
+          {listData.map(item => {
+            return (
+              <div key={item.title} className={style.blog}>
+                <div className={style.tag} />
+                <div className={style.avatar}>
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                </div>
+                <div className={style.content}>
+                  <Title ellipsis={{ rows: 1 }} level={4}>
+                    {item.title}
+                    {item.title}
+                    {item.title}
+                  </Title>
+                  <Paragraph ellipsis={{ rows: 2 }}>
+                    Ant Design, a design language for background applications, is refined by Ant UED
+                    Team. Ant Design, a design language for background applications, is refined by
+                    Ant UED Team. Ant Design, a design language for background applications, is
+                    refined by Ant UED Team. Ant Design, a design language for background
+                    applications, is refined by Ant UED Team. Ant Design, a design language for
+                    background applications, is refined by Ant UED Team. Ant Design, a design
+                    language for background applications, is refined by Ant UED Team.
+                  </Paragraph>
+                </div>
+              </div>
+            )
+          })}
           <div className={style.loadMore}>
-            <Button onClick={this.loadMore} type="primary" shape="round" size="small">
+            <Button type="primary" shape="round" size="small">
               加载更多
             </Button>
           </div>
-        }
-        dataSource={listData}
-        renderItem={item => (
-          <List.Item
-            key={item.title}
-            actions={[
-              <IconText type="star-o" text="156" key="list-vertical-star-o" />,
-              <IconText type="like-o" text="156" key="list-vertical-like-o" />,
-              <IconText type="message" text="2" key="list-vertical-message" />
-            ]}
-            extra={
-              <img
-                width={180}
-                alt="logo"
-                src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-              />
-            }>
-            <List.Item.Meta
-              title={
-                <>
-                  {item.isNew ? <Tag color="red">new</Tag> : null}
-                  <div href={item.href}>{item.title}</div>
-                </>
-              }
-            />
-            {item.content}
-          </List.Item>
-        )}
-      />
+        </PerfectScrollbar>
+      </div>
     )
   }
 }
