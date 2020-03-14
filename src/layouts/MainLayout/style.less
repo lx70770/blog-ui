@@ -6,6 +6,9 @@
   overflow: hidden;
 
   .mainMenu {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
     flex-shrink: 0;
     width: 220px;
     padding-top: 20px;
@@ -45,6 +48,10 @@
         background-color: #f5f7fa;
       }
     }
+    .user {
+      cursor: pointer;
+      margin: 0 0 30px 22px;
+    }
   }
 
   .container {
@@ -54,7 +61,7 @@
     flex: 1;
     height: 100%;
     overflow: auto;
-    padding: 0 25px;
+    padding-left: 25px;
     .content {
       flex: 1;
       height: 100%;

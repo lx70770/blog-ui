@@ -3,6 +3,7 @@ import router from 'umi/router'
 // import PerfectScrollbar from 'react-perfect-scrollbar'
 import { Icon } from 'components'
 import Menu from './menu.comfig'
+import User from './User'
 import style from './style.less'
 
 export default class extends PureComponent {
@@ -37,6 +38,9 @@ export default class extends PureComponent {
               <a href="mailto:lx70770@gmail.com">Gmail</a>
             </li>
           </ul>
+          <div className={style.user}>
+            <User />
+          </div>
         </div>
         <div className={style.container} id="container">
           <div className={style.content}>{children}</div>

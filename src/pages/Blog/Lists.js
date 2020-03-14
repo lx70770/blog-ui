@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'dva'
 import { Icon } from 'components'
 import { Button, Avatar, Typography } from 'antd'
 import PerfectScrollbar from 'react-perfect-scrollbar'
@@ -15,13 +16,15 @@ for (let i = 0; i < 10; i++) {
   })
 }
 
-export default class Lists extends PureComponent {
-  componentDidMount() {
-    document.querySelector('#container').style.overflow = 'hidden'
+@connect()
+class Lists extends PureComponent {
+  constructor(props) {
+    super(props)
+    props.dispatch({
+      type: 'blog/query'
+    })
   }
-  componentWillUnmount() {
-    document.querySelector('#container').style.overflow = 'auto'
-  }
+
   render() {
     return (
       <div className={style.blogList}>
@@ -69,3 +72,5 @@ export default class Lists extends PureComponent {
     )
   }
 }
+
+export default Lists

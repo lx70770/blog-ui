@@ -1,7 +1,7 @@
-import { getBlogList } from 'services/home'
+import { getBlogList } from 'services/blog'
 
 export default {
-  namespace: 'home',
+  namespace: 'blog',
 
   effects: {
     *query(_, { call }) {

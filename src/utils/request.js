@@ -23,6 +23,8 @@ export default function request(url, option = {}) {
   // 请求超时时间
   option.timeout = 15000
 
+  url = `v1/${url}`
+
   return new Promise((resolve, reject) => {
     axios
       .request({ ...option, url })
