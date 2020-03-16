@@ -26,6 +26,10 @@ export default class extends PureComponent {
     router.push(route)
   }
 
+  newArticle = () => {
+    router.push('/article')
+  }
+
   render() {
     const { children } = this.props
     return (
@@ -40,6 +44,8 @@ export default class extends PureComponent {
           </ul>
           <div className={style.user}>
             <User />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Icon type="add" width={22} height={22} onClick={this.newArticle} />
           </div>
         </div>
         <div className={style.container} id="container">

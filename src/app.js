@@ -1,7 +1,9 @@
+import React from 'react'
 import { notification } from 'antd'
+import _ from 'lodash'
 
 const openNotificationWithIcon = (type, message, description) => {
-  notification[type]({ message, description, duration: null })
+  notification[type]({ message, description, duration: 5 })
 }
 
 const handleError = err => {
@@ -38,6 +40,41 @@ const handleError = err => {
         openNotificationWithIcon('error', message)
         return
       }
+    }
+  }
+  if (_.isNumber(errObject.code) && errObject.msg) {
+    const { msg, code } = errObject
+    const renderMessage = () => {
+      if (_.isArray(msg)) {
+        return msg.map((item, index) => {
+          return (
+            <div key={item}>
+              {index + 1}.{item}
+            </div>
+          )
+        })
+      }
+      if (_.isString(msg)) {
+        return msg
+      }
+      return 'we make some mistake!!!'
+    }
+    openNotificationWithIcon(
+      'error',
+      <div>
+        <span>code:</span>
+        <span>{code}</span>
+      </div>,
+      <>
+        <div>
+          <span>error mssage:</span>
+          {renderMessage()}
+        </div>
+      </>
+    )
+    switch (code) {
+      case 10004:
+        localStorage.removeItem('token')
     }
   }
 }

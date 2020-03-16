@@ -1,6 +1,7 @@
 import publicRoutes from './public'
 import MainRoutes from './main'
 import BlogRoutes from './blog'
+import articleRoutes from './article'
 
 export default [
   {
@@ -16,5 +17,10 @@ export default [
     path: '/main',
     component: '../layouts/MainLayout',
     routes: [...MainRoutes, ...BlogRoutes]
+  },
+  {
+    path: '/article',
+    component: '../layouts/ArticleLayout',
+    routes: articleRoutes
   }
 ]

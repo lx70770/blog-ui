@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'dva'
 import immer from 'immer'
+import { message } from 'antd'
 import {
   validatorEmail,
   validatorPassword1,
@@ -8,7 +10,8 @@ import {
 } from './valiadtor'
 import style from './style.less'
 
-export default class singupForm extends PureComponent {
+@connect()
+class SingupForm extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -78,7 +81,18 @@ export default class singupForm extends PureComponent {
       password2: password2.value,
       email: email.value
     }
-    console.log(params)
+    const { toggle } = this.props
+    this.props
+      .dispatch({
+        type: 'user/register',
+        payload: params
+      })
+      .then(res => {
+        if (res.code === 0) {
+          message.success('注册成功，请登录')
+          toggle('signIn')
+        }
+      })
   }
 
   render() {
@@ -137,3 +151,5 @@ export default class singupForm extends PureComponent {
     )
   }
 }
+
+export default SingupForm

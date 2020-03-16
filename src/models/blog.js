@@ -5,7 +5,8 @@ export default {
 
   effects: {
     *query(_, { call }) {
-      yield call(getBlogList)
+      const reaponse = yield call(getBlogList)
+      console.log(reaponse)
     }
   }
 }

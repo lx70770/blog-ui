@@ -1,7 +1,7 @@
 import path from 'path'
 import routes from './routes'
 
-const url = '47.104.60.8'
+const url = 'localhost'
 
 export default {
   targets: { ie: 10 },
@@ -9,7 +9,7 @@ export default {
   hash: true,
   proxy: {
     '/api': {
-      target: `http://${url}/`,
+      target: `http://${url}:3000/`,
       changeOrigin: true,
       pathRewrite: { '^/api': '' }
     },
